@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<style xmlns="http://purl.org/net/xbiblio/csl" version="1.0">
+<style xmlns="http://purl.org/net/xbiblio/csl"
+       version="1.0"
+       class="in-text"
+       default-locale="de-DE">
   <info>
     <title>Harvard-FOM Final</title>
     <id>http://www.zotero.org/styles/harvard-fom-final</id>
@@ -13,26 +16,21 @@
     <updated>2025-07-06T12:22:50+00:00</updated>
   </info>
 
-  <!-- Autor kursiv -->
+  <!-- Makros (müssen vor <citation> stehen) -->
   <macro name="author">
     <names variable="author">
       <name font-style="italic" name-as-sort-order="all" delimiter=", "/>
     </names>
   </macro>
 
-  <!-- Jahr -->
   <macro name="issued">
-    <date variable="issued">
-      <date-part name="year"/>
-    </date>
+    <date variable="issued"><date-part name="year"/></date>
   </macro>
 
-  <!-- Titel -->
   <macro name="title">
     <text variable="title"/>
   </macro>
 
-  <!-- Container (Zeitschrift, Sammelband) -->
   <macro name="container">
     <group delimiter=", ">
       <text variable="container-title"/>
@@ -41,7 +39,6 @@
     </group>
   </macro>
 
-  <!-- Verlag -->
   <macro name="publisher">
     <group delimiter=", ">
       <text variable="publisher-place"/>
@@ -49,7 +46,6 @@
     </group>
   </macro>
 
-  <!-- Zugriff (Web) -->
   <macro name="access">
     <group delimiter=" ">
       <text term="accessed" text-case="capitalize-first"/>
@@ -87,4 +83,14 @@
       <text macro="access" prefix=", "/>
     </layout>
   </bibliography>
+
+  <!-- Deutsche Lokalisierung -->
+  <locale xml:lang="de-DE">
+    <terms>
+      <term name="accessed">Zugriff am</term>
+      <term name="editor" form="short">Hrsg.</term>
+      <term name="in">In:</term>
+      <term name="from">von</term>
+    </terms>
+  </locale>
 </style>
