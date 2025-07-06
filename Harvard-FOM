@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<style xmlns="http://purl.org/net/xbiblio/csl" version="1.0">
+  <info>
+    <title>Harvard-FOM</title>
+    <id>http://www.zotero.org/styles/harvard-fom</id>
+    <link href="http://www.zotero.org/styles/harvard-fom" rel="self"/>
+    <link href="https://validator.citationstyles.org" rel="documentation"/>
+    <author>
+      <name>OpenAI ChatGPT</name>
+    </author>
+    <category citation-format="author-date"/>
+    <category field="generic-base"/>
+    <summary>Harvard‐Stil für FOM mit Autorname kursiv, deutschsprachigem Literaturverzeichnis, ohne Punkt am Ende</summary>
+    <updated>2025-07-06T00:00:00+00:00</updated>
+    <language>de-DE</language>
+  </info>
+
+  <locale xml:lang="de">
+    <terms>
+      <term name="accessed">Zugriff am</term>
+      <term name="editor" form="short">Hrsg.</term>
+      <term name="in">In:</term>
+      <term name="retrieved">Abgerufen</term>
+      <term name="from">von</term>
+    </terms>
+  </locale>
+
+  <!-- Autorname kursiv -->
+  <macro name="author">
+    <names variable="author">
+      <name name-as-sort-order="all" font-style="italic" delimiter=", "/>
+    </names>
+  </macro>
+
+  <!-- Jahr -->
+  <macro name="date">
+    <date variable="issued">
+      <date-part name="year"/>
+    </date>
+  </macro>
+
+  <!-- Titel -->
+  <macro name="title">
+    <text variable="title"/>
+  </macro>
+
+  <!-- Zeitschrift oder Sammelband -->
+  <macro name="container">
+    <group delimiter=", ">
+      <text variable="container-title"/>
+      <text variable="volume" prefix=", "/>
+      <text variable="issue" prefix="(" suffix=")"/>
+    </group>
+  </macro>
+
+  <!-- Verlag -->
+  <macro name="publisher">
+    <group delimiter=", ">
+      <text variable="publisher-place"/>
+      <text variable="publisher"/>
+    </group>
+  </macro>
+
+  <!-- Web‐Zugriff -->
+  <macro name="access">
+    <group delimiter=" ">
+      <text term="accessed" text-case="capitalize-first"/>
+      <date variable="accessed" prefix=" " suffix="">
+        <date-part name="day" suffix="."/>
+        <date-part name="month" suffix="."/>
+        <date-part name="year"/>
+      </date>
+      <text variable="URL" prefix="URL: "/>
+    </group>
+  </macro>
+
+  <!-- In‐Text‐Zitation -->
+  <citation>
+    <layout prefix="(" suffix=")" delimiter="; ">
+      <group delimiter=", ">
+        <text macro="author"/>
+        <text macro="date"/>
+        <text variable="page" prefix="S. "/>
+      </group>
+    </layout>
+  </citation>
+
+  <!-- Literaturverzeichnis -->
+  <bibliography>
+    <sort>
+      <key variable="author"/>
+      <key variable="issued"/>
+    </sort>
+    <layout suffix="">
+      <text macro="author"/>
+      <text macro="date" prefix=" (" suffix=")"/>
+      <text macro="title" prefix=" "/>
+      <text macro="container" prefix=" "/>
+      <text variable="page" prefix=", S. "/>
+      <text macro="publisher" prefix=", "/>
+      <text macro="access" prefix=", "/>
+    </layout>
+  </bibliography>
+</style>
